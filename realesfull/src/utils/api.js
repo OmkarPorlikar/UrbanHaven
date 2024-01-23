@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { useAsyncError } from 'react-router-dom';
 
 const api = axios.create({
-    baseURL: "http://localhost:8000/api/"
+    baseURL: "https://urban-haven-backend.vercel.app/api"
     
 })
 
