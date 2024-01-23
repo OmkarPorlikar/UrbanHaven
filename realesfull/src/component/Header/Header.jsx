@@ -27,13 +27,12 @@ const [opened , setOpened] = useState(false);
 
    // add Property
 const handleAddProperty =()=>{
-  if(!user){
+  if(!user?.tokenObject){
     toast.error('Please logi first !')
-  }
-  // onOpen()
-  setOpened(true)
+    setOpened(false)
+  }else{
+  setOpened(true)} 
 }
-
 const toggle = ()=>{
   // console.log(menuOpened, "menu Opened")
   setMenuOpened((prev)=> !prev)
