@@ -19,9 +19,7 @@ const Signup = () => {
   const { dispatch } = useContext(Context);
   const navigate = useNavigate();
 
-  // const { userDetails: { token },
-  //   setUserDetails
-  // } = useUserDetailContext
+
 
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   const {mutate} = useMutation({
@@ -29,7 +27,6 @@ const Signup = () => {
     mutationFn: (userData)=> createUser( userData.name , userData.email , userData.pass)
   })
 
-    const [errorMsg, setErrorMsg] = useState("");
 
   const validationSchema = useFormik({
     initialValues: {
@@ -88,7 +85,7 @@ const Signup = () => {
           value={validationSchema.values.name}
         />
         {validationSchema.touched.name && validationSchema.errors.name && (
-          <span className={styles.error}>{validationSchema.errors.name}</span>
+          <span className={styles.error} style={{color:'red'}} >{validationSchema.errors.name}</span>
         )}
 
         <InputControl
@@ -100,7 +97,7 @@ const Signup = () => {
           value={validationSchema.values.email}
         />
         {validationSchema.touched.email && validationSchema.errors.email && (
-          <span className={styles.error}>{validationSchema.errors.email}</span>
+          <span className={styles.error} style={{color:'red'}}>{validationSchema.errors.email}</span>
         )}
 
         <InputControl
@@ -113,7 +110,7 @@ const Signup = () => {
           value={validationSchema.values.pass}
         />
         {validationSchema.touched.pass && validationSchema.errors.pass && (
-          <span className={styles.error}>{validationSchema.errors.pass}</span>
+          <span className={styles.error} style={{color:'red'}} >{validationSchema.errors.pass}</span>
         )}
 
         <div className={styles.footer}>
