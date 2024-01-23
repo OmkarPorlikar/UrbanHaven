@@ -8,7 +8,7 @@ const router = express.Router()
 
 export const googleCallback = (req, res, next) => {
     passport.authenticate('google', {
-      failureRedirect: 'http://localhost:3000/login',
+      failureRedirect: 'https://urban-haven-lilac.vercel.app/login',
     })(req, res, next);
   };
   
@@ -20,7 +20,7 @@ router.get('/user/auth/google', googleAuth);
   // Handling the result of Google authentication
   router.get(
     '/user/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/login' }),
+    passport.authenticate('google', { failureRedirect: 'https://urban-haven-lilac.vercel.app/login' }),
     (req, res) => {
       // Extract relevant user data
       const { username, email, image, id } = req.user;
@@ -39,7 +39,7 @@ console.log(req.user , "user login")
   
       // Redirect to the home page with sanitized user data in query parameters
       const userData = JSON.stringify({ token, tokenObject });
-      res.redirect(`http://localhost:3000?user=${encodeURIComponent(userData)}`);
+      res.redirect(`https://urban-haven-lilac.vercel.app?user=${encodeURIComponent(userData)}`);
     }
   );
   
