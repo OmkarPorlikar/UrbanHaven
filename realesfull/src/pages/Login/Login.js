@@ -15,21 +15,14 @@ import { toast } from "react-toastify";
 
 
 const Login = () => {
-  const type = 'Login'
   const { dispatch } = useContext(Context);
   const navigate = useNavigate();
-
-  // const { userDetails: { token },
-  //   setUserDetails
-  // } = useUserDetailContext
 
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   const {mutate} = useMutation({
     mutationKey: ['create User'],
     mutationFn: (userData)=> loginUser(userData.email , userData.pass)
   })
-
-    const [errorMsg, setErrorMsg] = useState("");
 
   const validationSchema = useFormik({
     initialValues: {
@@ -86,7 +79,7 @@ const Login = () => {
           value={validationSchema.values.email}
         />
         {validationSchema.touched.email && validationSchema.errors.email && (
-          <span className={styles.error}>{validationSchema.errors.email}</span>
+          <span className={styles.error} style={{color:'red'}} >{validationSchema.errors.email}</span>
         )}
 
         <InputControl
@@ -99,7 +92,7 @@ const Login = () => {
           value={validationSchema.values.pass}
         />
         {validationSchema.touched.pass && validationSchema.errors.pass && (
-          <span className={styles.error}>{validationSchema.errors.pass}</span>
+          <span className={styles.error} style={{color:'red'}} >{validationSchema.errors.pass}</span>
         )}
 
         <div className={styles.footer}>
