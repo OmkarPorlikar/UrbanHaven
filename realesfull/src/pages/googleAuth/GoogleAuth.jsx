@@ -3,7 +3,7 @@ import './GoogleAuth.css'
 const GoogleAuth = ({type}) => {
   const loginwithgoogle = ()=>{
     console.log(type)
-    window.open("http://localhost:8000/api/user/auth/google/callback","_self")
+    window.open("https://urban-haven-backend.vercel.app/api/user/auth/google/callback","_self")
 }
   return (
     <>
