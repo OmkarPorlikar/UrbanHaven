@@ -8,14 +8,10 @@ passport.use(
     {
       clientID: "936099558670-2fvsa6824ckrgu412fgbu86s0hm6g82a.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: 'http://localhost:8000/api/user/auth/google/callback',
+      callbackURL: 'https://urban-haven-backend.vercel.app/api/user/auth/google/callback',
       scope: ['profile', 'email'],
     },
     async (accessToken, refreshToken, profile, done) => {
-      console.log("I am here")
-// console.log(profile , "Profile ")
-console.log(profile.photos[0]?.value ,"photo")
-console.log(profile._json.picture , "profile photo")
       try {
         // Checking if the user already exists  database
         const existingUser = await prisma.user.findUnique({
@@ -67,8 +63,7 @@ passport.deserializeUser(async (user, done) => {
 });
 
 
-// Rest of your Google strategy setup comes here
-// ...
+
 
 export default passport;
 
