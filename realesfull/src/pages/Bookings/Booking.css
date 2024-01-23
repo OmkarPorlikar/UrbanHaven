@@ -1,0 +1,11 @@
+.right  .search-bar{
+    
+    width: clamp(12rem , 100% , 28rem);
+    border-radius: 30px;
+    border: 1px solid rgba(120,120,120,0.374);
+    gap: 0px;
+    flex-wrap: nowrap;
+    margin-bottom: 3rem;
+    margin: 0px auto 3rem auto
+    
+    }

@@ -1,0 +1,19 @@
+.companies{
+    width:  9rem;
+
+}
+.c-container{
+    justify-content: space-around;
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+/* .prologis{
+    height: 6rem;
+} */
+/* 
+@media (max-width:1300px ){
+    .c-container {
+        max-width: 1280px;
+    }
+} */

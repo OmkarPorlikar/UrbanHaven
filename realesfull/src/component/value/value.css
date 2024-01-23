@@ -1,0 +1,111 @@
+/* .v-left{
+height: 35rem;
+width: 30rem;
+border: 8px solid rgba(232, 232, 232, 0.93);
+
+overflow: hidden;
+border-radius: 15rem 15rem 0px 0px;
+} */
+.v-container .image-container{
+    border: 8px solid rgb(232,232,232,93);
+}
+/* .image-container{
+    width: inherit;
+    width: 30rem;
+    height: 35rem;
+    overflow: hidden;
+    border-radius:15rem 15rem 0 0 ;
+    border: 8px solid rgba(255,255,255 , 0.12);
+    margin-top: 4rem;
+    } */
+.image{
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+
+}
+.v-container{
+    gap: 5rem;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.v-container>div{
+    flex:1;
+}
+/* .primaryText{
+    font-size: 1rem;
+} */
+.secondaryText {
+    color: rgb(140 139 139);
+    font-size: 0.9rem;
+}
+.accordionButton .primaryText {
+    font-size: 1.1rem;
+}
+.v-right{
+    flex: 1;
+    /* gap: 0.5rem; */
+}
+/* .v-left{
+    flex: 1;
+} */
+
+.c1{
+    margin-top: 2rem;
+    border: none;
+}
+/* accordionItem */
+.accordionItem{
+    background: white;
+    border: 0.8px solid rgba(128,128,128,0.14);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom:20px;
+}
+
+.accordionButton{
+    background: white;
+    padding: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.icon{
+    padding: 10px;
+    background: #eeeeff;
+    border-radius: 5px;
+}
+.icon svg{
+    fill: var(--blue);
+}
+
+.accordiaonButton .primaryText{
+    font-size: 1.1rem;
+}
+.accordionItem.expanded{
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+}
+
+@media (max-width:1024px){
+    .v-container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px){
+
+    /* when i put the .accordiaonButton .primary on top so the it's font size is not getting 
+    applied  */
+
+    /* when i put v-right on top then only it's getting applied */
+
+    .v-right .primaryText{
+        font-size: 1.5rem;
+    }
+.accordionButton .primaryText {
+    font-size: .8rem;
+}
+
+}

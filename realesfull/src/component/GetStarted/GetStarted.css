@@ -1,0 +1,47 @@
+.inner-container{
+    gap: 1.5rem;
+    background:#4161df;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 6px solid #5d77d6 ;
+    text-align: center;
+}
+.inner-container .primaryText{
+    color: white;
+    font-size: 600;
+
+}
+
+.inner-container .secondaryText{
+color: rgba(255,255,255,0.587);
+}
+.inner-container .Button{
+    background: #5a73d7;
+    border: 2px solid white;
+    box-shadow: var(--shadow);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .g-container .primaryText{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .inner-container{
+        padding: 1.7rem;
+    }
+    .f-container{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .f-right{
+        align-items: center;
+    }
+    .f-left{
+        align-items: center;
+    }
+}
+

@@ -1,0 +1,19 @@
+.App {
+  position: relative;
+  overflow-x: clip; /* or overflow-x: hidden; depending on your intention */
+  background-color: white;
+}
+.h-container{
+  background-color: #302e2e;
+}
+
+.white-gradient {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.522);
+  filter: blur(100px);
+  border-radius: 100px;
+  /* background-color: red; */
+
+}
