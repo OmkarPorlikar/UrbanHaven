@@ -44,7 +44,9 @@ const totalPage = Math.ceil(data?.totalPropertiesCount /10);
 
 
 const handleGoNext = () =>{
-// (value <= totalPage)
+
+if(value>totalPage){ toast.error(`Number should be not be grater than the ${totalPage}`)}
+  setCurrentPage( (prev)=> (value<=totalPage? value : prev))
   setGoto(false)
 setValue("")
 }
