@@ -92,41 +92,6 @@ try {
 })
 
 
-//  export const googleAuth  = expressAsyncHandler((req, res, next) => {
-//   console.log('Inside the Google auth route');
-//   passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
-// });
-
-// Handling Google authentication callback
-
-
-// export  const googleCallback = expressAsyncHandler(
-//   console.log("in google callback"),
-//   passport.authenticate('google', {
-//     failureRedirect: 'http://localhost:3000/login',
-//   }),
-//   (req, res) => {
-//     // Extract relevant user data
-//     console.log(req.user , "bap re")
-//     const { username, email, profilePic ,id} = req.user;
-//     // Create sanitized user object
-//     const tokenObject = {
-//       id,
-//       name:username,
-//       email,
-//       image:profilePic,
-//       auth:"google Auth"
-//     };
-//     const token = sign(tokenObject, process.env.SECRET, { expiresIn: '6h' });
-
-//     // Redirect to home page with sanitized user data in query parameters
-//     const userData = JSON.stringify({token , tokenObject});
-//     console.log(userData, "bapu user")
-//     res.redirect(`http://localhost:3000?user=${encodeURIComponent(userData)}`);
-//   }
-// );
-
-
 
 export const bookVisits = expressAsyncHandler(async (req, res) => {
   const { email, date } = req.body;
@@ -209,52 +174,6 @@ export const cancleBookings = expressAsyncHandler(async (req, res) => {
     throw new Error(err);
   }
 });
-// add and remove the favourite 
-// This one is not working now
-
-
-// export const addFav = expressAsyncHandler( async (req, res)=>{
-//   console.log("add fav")
-//     const {email} = req.body;
-//     const resId  = req.params.id;
-//     console.log(email,"from 227")
-//     console.log(resId,"resId")
-//     // console.log(resId,"id")
-
-//     try{
-//         const user = await prisma.user.findUnique({
-// where:{email},select: {  favResidenciesiD:true}
-//         })
-
-// if(user.favResidenciesiD.includes(resId)){
-//     console.log("inside if ")
-//     const index = user.favResidenciesiD.findIndex( (fav)=>(fav.id === resId));
-
-//     user.favResidenciesiD.splice(index,1)
-//      const userFav = await prisma.user.update({
-//         where:{email},
-//         data:user.favResidenciesiD
-//     })
-    
-//     res.status(201).json({message:"The Residency successfully removed form favourite "})
-
-// }
-
-// else{
-//         console.log("inside else")
-//     const userFav = await prisma.user.update({
-//         where:{email},
-//         data:{ favResidenciesiD: {push:resId} }
-//     })
-// res.status(201).json({message:"successfully liked the Residency"})
-// }
-
-// } 
-//     catch(error){
-//       console.log("from 259", error)
-//         res.status(500).json({message:"something went wrong with favratoure"})
-//     }
-// })
 
 export const addFav = expressAsyncHandler(async (req, res) => {
   const { email } = req.body;
