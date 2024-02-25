@@ -7,7 +7,7 @@ import { PuffLoader } from 'react-spinners';
 import PropertiesCard from '../../component/PropertiesCard/PropertiesCard';
 import { useNavigate , useLocation, json  } from 'react-router-dom';
 import { Button, JsonInput } from '@mantine/core';
-
+ import { toast } from 'react-toastify';
 
 const Properties = () => {
   const location = useLocation();
