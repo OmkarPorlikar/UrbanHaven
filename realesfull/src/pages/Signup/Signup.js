@@ -56,7 +56,7 @@ const Signup = () => {
               console.log(data , "Data from the user")
               dispatch({type: "LOGIN_SUCCESS" , payload:data})
               toast.success('user has been created !')
-              data && navigate('/')
+              // data && navigate('/')
             },
             onError:(error)=>{
               console.log(error , "error create user")
